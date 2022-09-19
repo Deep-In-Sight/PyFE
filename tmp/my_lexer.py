@@ -2,12 +2,13 @@ from sly import Lexer
 
 class MyLexer(Lexer):
     tokens = {NUMBER, PLUS, MINUS, TIMES, STRING, NAME,
+            LESSTHAN, GREATERTHAN,
              LPAREN, RPAREN, ASSIGN}
     ignore = ' \t'
     ignore_comment = r'\#.*'
     ignore_newline = r'\n+'
     
-    literals = {'.', '!'}
+    literals = {'.', '!'} # lietrals are not processed and returned 'as is'
     
     # The definition of each token in a regex pattern
     # Longer tokens needd to be defined "before" shorter ones.
